@@ -1,0 +1,27 @@
+from pyomo.environ import *
+model = AbstractModel()
+
+model.foods = Set()
+model.nutrients = Set()
+
+model.costs = Param(model.foods)
+model.min_nutrient = Param(model.nutrients)
+model.max_nutrient = Param(model.nutrients)
+model.volumes = Param(model.foods)
+model.max_volume = Param()
+model.nutrient_value = Param(model.nutrients, model.foods)
+
+model.amount = Var(model.foods, within = NonNegativeReals)
+
+def cost_rule(model):
+    return sum(model.costs[n]*model.amount[n] for n in model.foods)
+model.cost = Objective(rule=cost_rule)
+
+def volume_rule(model):
+    return sum(model.volumes[n]*model.amount[n] for n in model.foods) <= model.max_volume
+model.volume = Constraint(rule=volume_rule)
+
+def nutrient_rule(model, n):
+    value = sum(model.nutrient_value[n,f]*model.amount[f] for f in model.foods)
+    return model.min_nutrient[n] <= value <= model.max_nutrient[n]
+model.nutrient_limit = Constraint(model.nutrients, rule=nutrient_rule)
