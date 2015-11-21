@@ -1,27 +1,40 @@
 from pyomo.environ import *
+infinity = float('inf')
+
 model = AbstractModel()
 
-model.foods = Set()
-model.nutrients = Set()
+# Foods
+model.F = Set()
+# Nutrients
+model.N = Set()
 
-model.costs = Param(model.foods)
-model.min_nutrient = Param(model.nutrients)
-model.max_nutrient = Param(model.nutrients)
-model.volumes = Param(model.foods)
-model.max_volume = Param()
-model.nutrient_value = Param(model.nutrients, model.foods)
+# Cost of each food
+model.c    = Param(model.F, within=PositiveReals)
+# Amount of nutrient in each food
+model.a    = Param(model.F, model.N, within=NonNegativeReals)
+# Lower and upper bound on each nutrient
+model.Nmin = Param(model.N, within=NonNegativeReals, default=0.0)
+model.Nmax = Param(model.N, within=NonNegativeReals, default=infinity)
+# Volume per serving of food
+model.V    = Param(model.F, within=PositiveReals)
+# Maximum volume of food consumed
+model.Vmax = Param(within=PositiveReals)
 
-model.amount = Var(model.foods, within = NonNegativeReals)
+# Number of servings consumed of each food
+model.x = Var(model.F, within=NonNegativeIntegers)
 
+# Minimize the cost of food that is consumed
 def cost_rule(model):
-    return sum(model.costs[n]*model.amount[n] for n in model.foods)
+    return sum(model.c[i]*model.x[i] for i in model.F)
 model.cost = Objective(rule=cost_rule)
 
-def volume_rule(model):
-    return sum(model.volumes[n]*model.amount[n] for n in model.foods) <= model.max_volume
-model.volume = Constraint(rule=volume_rule)
+# Limit nutrient consumption for each nutrient
+def nutrient_rule(model, j):
+    value = sum(model.a[i,j]*model.x[i] for i in model.F)
+    return model.Nmin[j] <= value <= model.Nmax[j]
+model.nutrient_limit = Constraint(model.N, rule=nutrient_rule)
 
-def nutrient_rule(model, n):
-    value = sum(model.nutrient_value[n,f]*model.amount[f] for f in model.foods)
-    return model.min_nutrient[n] <= value <= model.max_nutrient[n]
-model.nutrient_limit = Constraint(model.nutrients, rule=nutrient_rule)
+# Limit the volume of food consumed
+def volume_rule(model):
+    return sum(model.V[i]*model.x[i] for i in model.F) <= model.Vmax
+model.volume = Constraint(rule=volume_rule)
