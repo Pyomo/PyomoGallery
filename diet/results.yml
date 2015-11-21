@@ -1,0 +1,49 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 15.05
+  Upper bound: 15.05
+  Number of objectives: 1
+  Number of constraints: 10
+  Number of variables: 10
+  Number of nonzeros: 77
+  Sense: minimize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 89
+      Number of created subproblems: 89
+  Error rc: 0
+  Time: 0.00977396965027
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 1
+  number of solutions displayed: 1
+- Gap: 0.0
+  Status: optimal
+  Message: None
+  Objective:
+    cost:
+      Value: 15.05
+  Variable:
+    x[Cheeseburger]:
+      Value: 4
+    x[Fries]:
+      Value: 5
+    x[Fish Sandwich]:
+      Value: 1
+    x[Lowfat Milk]:
+      Value: 4
+  Constraint: No values
