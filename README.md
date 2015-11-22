@@ -3,13 +3,13 @@ A collection of Pyomo examples
 
 #### For Users
 
-This project supports a collection of Pyomo models and scripting examples.  See the [wiki](https://github.com/Pyomo/PyomoGallery/wiki), for further details.
+This project supports a collection of Pyomo models and scripting examples.  See the [wiki](https://github.com/Pyomo/PyomoGallery/wiki), for the list of examples.
 
 The Pyomo Gallery is available under the BSD License.
 
 #### For Contributors
 
-We encourage contributions to PyomoGallery from all Pyomo users and developers.  Each example in the gallery is stored in a separate subdirectory, and a Jupyter notebook is used to describe the example.  Existing examples illustrate the expected level of detail, but feel free to structure your example in a different manner as appropriate.
+We encourage contributions to the Pyomo Gallery from all Pyomo users and developers.  Each example in the gallery is stored in a separate subdirectory, and a Jupyter notebook is used to describe the example.  Existing examples illustrate the expected level of detail, but feel free to structure your example in a different manner as appropriate.
 
 By contributing to this software project, you are agreeing to the following terms and conditions for your contributions:
 
