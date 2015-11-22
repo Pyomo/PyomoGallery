@@ -3,7 +3,7 @@ A collection of Pyomo examples
 
 #### For Users
 
-This project supports a collection of Pyomo models and scripting examples.  See the [wiki](https://github.com/Pyomo/PyomoGallery/wiki), for the list of examples.
+This project supports a collection of Pyomo models and scripting examples.  [See the wiki for the list of examples.](https://github.com/Pyomo/PyomoGallery/wiki)
 
 The Pyomo Gallery is available under the BSD License.
 
