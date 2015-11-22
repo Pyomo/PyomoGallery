@@ -1,0 +1,63 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 14.0
+  Upper bound: 14.0
+  Number of objectives: 1
+  Number of constraints: 17
+  Number of variables: 12
+  Number of nonzeros: 30
+  Sense: maximize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 0
+      Number of created subproblems: 0
+  Error rc: 0
+  Time: 0.00943398475647
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 1
+  number of solutions displayed: 1
+- Gap: 0.0
+  Status: feasible
+  Message: None
+  Objective:
+    total:
+      Value: 14
+  Variable:
+    f[C,E]:
+      Value: 4
+    f[C,D]:
+      Value: 2
+    f[Zoo,A]:
+      Value: 7
+    f[A,C]:
+      Value: 3
+    f[E,Home]:
+      Value: 6
+    f[B,A]:
+      Value: 4
+    f[D,Home]:
+      Value: 8
+    f[D,E]:
+      Value: 2
+    f[B,C]:
+      Value: 3
+    f[Zoo,B]:
+      Value: 7
+    f[A,D]:
+      Value: 8
+  Constraint: No values
