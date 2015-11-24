@@ -1,0 +1,52 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: unknown
+  Lower bound: 153.675
+  Upper bound: 153.675
+  Number of objectives: 1
+  Number of constraints: 6
+  Number of variables: 7
+  Number of nonzeros: 13
+  Sense: minimize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  Termination condition: optimal
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 0
+      Number of created subproblems: 0
+  Error rc: 0
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 1
+  number of solutions displayed: 1
+- Gap: 0.0
+  Status: feasible
+  Objective: 
+    objective: 
+      Id: 0
+      Value: 153.675
+  Variable: 
+    x[seattle,chicago]:
+      Id: 0
+      Value: 300
+    x[seattle,new-york]:
+      Id: 1
+      Value: 50
+    x[san-diego,new-york]:
+      Id: 4
+      Value: 275
+    x[san-diego,topeka]:
+      Id: 5
+      Value: 275
+  Constraint: No nonzero values
