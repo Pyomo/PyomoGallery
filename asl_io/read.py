@@ -1,4 +1,5 @@
 import pyomo.environ
+from pyomo.core import SymbolMap
 from pyomo.opt import (ReaderFactory,
                        ResultsFormat)
 # use fast version of pickle (python 2 or 3)
@@ -34,7 +35,6 @@ def read_sol(model, sol_filename, symbol_map_filename, suffixes=[".*"]):
     return results
 
 if __name__ == "__main__":
-    from pyomo.environ import *
     from pyomo.opt import TerminationCondition
     from script import create_model
 

@@ -1,4 +1,5 @@
 import pyomo.environ
+from pyomo.core import ComponentUID
 from pyomo.opt import ProblemFormat
 # use fast version of pickle (python 2 or 3)
 from six.moves import cPickle as pickle
@@ -32,7 +33,6 @@ def write_nl(model, nl_filename, **kwds):
     return symbol_map_filename
 
 if __name__ == "__main__":
-    from pyomo.environ import *
     from script import create_model
 
     model = create_model()
