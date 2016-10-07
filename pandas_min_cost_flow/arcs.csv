@@ -1,0 +1,8 @@
+Start,End,Cost,UpperBound,LowerBound
+A,B,1,0,-1
+B,C,1,-1,-1
+C,D,1,-1,-1
+D,E,1,-1,-1
+A,C,3,-1,-1
+A,D,4,-1,-1
+A,E,5,-1,-1
