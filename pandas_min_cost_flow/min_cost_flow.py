@@ -68,7 +68,7 @@ class MinCostFlow:
             e = (n1,n2)
             if self.arc_data.ix[e, 'LowerBound'] < 0:
                 return pe.Constraint.Skip
-            return m.Y[e] <= self.arc_data.ix[e, 'LowerBound']
+            return m.Y[e] >= self.arc_data.ix[e, 'LowerBound']
         self.m.LowerBound = pe.Constraint(self.m.arc_set, rule=lower_bounds_rule)
 
     def solve(self):
