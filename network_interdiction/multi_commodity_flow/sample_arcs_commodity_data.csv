@@ -1,0 +1,15 @@
+StartNode,EndNode,Commodity,Cost,Capacity
+Start,B,Rice,0,-1
+Start,C,Rice,10,-1
+C,B,Rice,30,-1
+B,End,Rice,0,-1
+B,D,Rice,40,-1
+C,D,Rice,20,-1
+D,End,Rice,70,-1
+Start,B,Corn,0,-1
+Start,C,Corn,100,-1
+C,B,Corn,300,-1
+B,End,Corn,0,-1
+B,D,Corn,400,-1
+C,D,Corn,200,-1
+D,End,Corn,700,-1
