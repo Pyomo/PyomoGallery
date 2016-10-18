@@ -1,0 +1,7 @@
+StartNode,EndNode,Cost,Attackable
+Start,B,10,1
+Start,C,2,1
+C,B,2,1
+B,End,1,1
+C,D,7,1
+D,End,8,1

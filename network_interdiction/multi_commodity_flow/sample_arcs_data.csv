@@ -1,0 +1,8 @@
+StartNode,EndNode,Capacity,Attackable
+Start,B,20,1
+Start,C,70,1
+C,B,30,1
+B,End,100,1
+B,D,20,1
+C,D,40,1
+D,End,50,1
