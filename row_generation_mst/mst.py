@@ -49,7 +49,7 @@ class MSTRowGeneration:
     def convertYsToNetworkx(self):
         """Convert the model's Y variables into a networkx object."""
         ans = networkx.Graph()
-        edges = [e for e in self.m.edge_set if self.m.Y[e] == 1]
+        edges = [e for e in self.m.edge_set if int(self.m.Y[e]) == 1]
         ans.add_edges_from(edges)
         return ans
 
