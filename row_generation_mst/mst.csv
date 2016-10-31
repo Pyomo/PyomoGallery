@@ -1,0 +1,10 @@
+startNode,destNode,dist
+A,B,1
+A,E,3
+A,D,4
+B,E,2
+B,D,4
+D,E,4
+E,C,4
+E,F,7
+C,F,5
