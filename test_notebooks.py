@@ -96,10 +96,7 @@ def get(nbname, nbpath):
         if check == 0:
             print('\n ..... {0} Passed ..... \n'.format(nbname))
             # if passed remove the generated html file
-            subprocess.call(['rm', '{0}.html'.format(
-                             os.path.sep.join(os.getcwd().split(os.path.sep)
-                             + [nbpath.split(os.path.sep)[-1][:-6]]
-                             ))])
+            #subprocess.call(['rm', '{0}.html'.format( os.path.sep.join(os.getcwd().split(os.path.sep) + [nbpath.split(os.path.sep)[-1][:-6]]))])
         else:
             print('\n <<<<< {0} FAILED >>>>> \n'.format(nbname))
             print('Captured Output: \n {0}'.format(err))
