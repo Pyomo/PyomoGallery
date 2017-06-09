@@ -175,23 +175,23 @@ class MaxFlowInterdiction:
         self.primal.solutions.load_from(results)
 
     def printSolution(self):
-        print
-        print 'Using %d attacks:'%self.attacks
-        print
+        print()
+        print('Using %d attacks:'%self.attacks)
+        print()
         edges = sorted(self.arc_set)
         for e in edges:
             if self.Idual.x[e].value > 0:
-                print 'Interdict arc %s -> %s'%(str(e[0]), str(e[1]))
-        print
+                print('Interdict arc %s -> %s'%(str(e[0]), str(e[1])))
+        print()
          
         for e0,e1 in self.arc_set:
             flow = self.primal.y[(e0,e1)].value
             if flow > 0:
-                print 'Flow on arc %s -> %s: %.2f'%(str(e0), str(e1), flow)
-        print
+                print('Flow on arc %s -> %s: %.2f'%(str(e0), str(e1), flow))
+        print()
 
-        print '----------'
-        print 'Total flow = %.2f (primal) %.2f (dual)'%(self.primal.OBJ(), self.Idual.OBJ())
+        print('----------')
+        print('Total flow = %.2f (primal) %.2f (dual)'%(self.primal.OBJ(), self.Idual.OBJ()))
 
 
 ########################

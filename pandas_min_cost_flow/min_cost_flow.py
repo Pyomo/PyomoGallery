@@ -85,5 +85,5 @@ class MinCostFlow:
 if __name__ == '__main__':
        sp = MinCostFlow('nodes.csv', 'arcs.csv') 
        sp.solve()
-       print '\n\n---------------------------'
-       print 'Cost: ', sp.m.OBJ()
+       print('\n\n---------------------------')
+       print('Cost: ', sp.m.OBJ())

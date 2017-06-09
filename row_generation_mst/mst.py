@@ -60,25 +60,24 @@ class MSTRowGeneration:
             return sum( m.Y[e] for e in m.edge_set if ((e[0] in cc) and (e[1] in cc))) <= len(cc) - 1
         
         if not hasattr(self, 'solver'):
-            solver = pyomo.opt.SolverFactory('cplex')
+            solver = pyomo.opt.SolverFactory('glpk')
 
         done = False
         while not done:
             # Solve once and add subtour elimination constraints if necessary
             # Finish when there are no more subtours
-            results = solver.solve(self.m, tee=False, keepfiles=False, options_string="mip_tolerances_integrality=1e-9 mip_tolerances_mipgap=0")
+            results = solver.solve(self.m, tee=False, keepfiles=False, options_string="mip_tolerances_integrality=1e-9 mipgap=0")
             # Construct a graph from the answer, and look for subtours
             graph = self.convertYsToNetworkx()
             ccs = list(networkx.connected_component_subgraphs(graph))
             for cc in ccs:
-                print 'Adding constraint for connected component:'
-                print cc.nodes()
-                print createConstForCC(self.m, cc)
-                print '--------------\n'
+                print('Adding constraint for connected component:')
+                print(cc.nodes())
+                print(createConstForCC(self.m, cc))
+                print('--------------\n')
                 self.m.ccConstraints.add( createConstForCC(self.m, cc) )
             if ccs[0].number_of_nodes() == len(self.m.node_set):
                 done = True
 
-if __name__ == '__main__':
-    mst = MSTRowGeneration('mst.csv')
-    mst.solve()
+mst = MSTRowGeneration('mst.csv')
+mst.solve()

@@ -35,8 +35,15 @@ try:
     jupyter_available = True
 except:
     jupyter_available = False
+try:
+    import pandas
+    pandas_available = True
+except:
+    pandas_available = False
 
 timeout=120
+
+requires_pandas = set(['max_flow_interdict', 'min_cost_flow_interdict', 'multi_commodity_flow_interdict', 'sp_interdict', 'min_cost_flow', 'mst'])
 
 
 # Testing for the notebooks - use nbconvert to execute all cells of the
@@ -72,10 +79,15 @@ def get(nbname, nbpath):
         print('   {0}'.format(nbpath))
         if not jupyter_available:
             self.skipTest("Jupyter unavailable")
+        if nbname in requires_pandas and not pandas_available:
+            self.skipTest("Pandas unavailable")
 
         # execute the notebook using nbconvert to generate html 
+        dir_=os.path.dirname(nbpath)
+        os.chdir(dir_)
         nbexe = subprocess.Popen(['jupyter', 'nbconvert', '{0}'.format(nbpath),
                                   '--execute',
+                                  '--inplace',
                                   '--ExecutePreprocessor.timeout='+str(timeout)],
                                  stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                  stderr=subprocess.PIPE)
@@ -104,6 +116,7 @@ nbpaths, nbnames = setUp()
 
 # build test for each notebook
 for i, nb in enumerate(nbnames):
+    print((i,nb,nbpaths[i]))
     setattr(TestNotebooks, 'test_'+nb, get(nb, nbpaths[i]))
 
 

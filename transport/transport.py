@@ -91,5 +91,5 @@ if __name__ == '__main__':
     #sends results to stdout
     results.write()
     print("\nDisplaying Solution\n" + '-'*60)
-    pyomo_postprocess(None, instance, results)
+    pyomo_postprocess(None, model, results)
 

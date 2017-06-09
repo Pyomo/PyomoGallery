@@ -225,35 +225,35 @@ class MultiCommodityInterdiction:
         self.primal.solutions.load_from(results)
 
     def printSolution(self):
-        print
-        print 'Using %d attacks:'%self.attacks
-        print
+        print()
+        print('Using %d attacks:'%self.attacks)
+        print()
         edges = sorted(self.arc_set)
         for e in edges:
             if self.Idual.x[e].value > 0:
-                print 'Interdict arc %s -> %s'%(str(e[0]), str(e[1]))
-        print
+                print('Interdict arc %s -> %s'%(str(e[0]), str(e[1])))
+        print()
         
         nodes = sorted(self.node_commodity_data.index)
         for n in nodes:
             remaining_supply = self.primal.UnsatSupply[n].value
             if remaining_supply > 0:
-                print 'Remaining supply of %s on node %s: %.2f'%(str(n[1]), str(n[0]), remaining_supply)
+                print('Remaining supply of %s on node %s: %.2f'%(str(n[1]), str(n[0]), remaining_supply))
         for n in nodes:
             remaining_demand = self.primal.UnsatDemand[n].value
             if remaining_demand > 0:
-                print 'Remaining demand of %s on node %s: %.2f'%(str(n[1]), str(n[0]), remaining_demand)
-        print
+                print('Remaining demand of %s on node %s: %.2f'%(str(n[1]), str(n[0]), remaining_demand))
+        print()
         
         for e0,e1 in self.arc_set:
             for k in self.commodity_set:
                 flow = self.primal.y[(e0,e1,k)].value
                 if flow > 0:
-                    print 'Flow on arc %s -> %s: %.2f %s'%(str(e0), str(e1), flow, str(k))
-        print
+                    print('Flow on arc %s -> %s: %.2f %s'%(str(e0), str(e1), flow, str(k)))
+        print()
 
-        print '----------'
-        print 'Total cost = %.2f (primal) %.2f (dual)'%(self.primal.OBJ(), self.Idual.OBJ())
+        print('----------')
+        print('Total cost = %.2f (primal) %.2f (dual)'%(self.primal.OBJ(), self.Idual.OBJ()))
 
 
 ########################
