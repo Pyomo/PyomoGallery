@@ -118,10 +118,16 @@ class TestNotebooks(unittest.TestCase):
     pass
 
 nbpaths, nbnames = setUp()
+# Check for duplicates
+tmp = set()
+for name in nbnames:
+    if name in tmp:
+        raise IOError("ERROR: duplicate test name %s" % name)
+    tmp.add(name)
 
 # build test for each notebook
 for i, nb in enumerate(nbnames):
-    print((i,nb,nbpaths[i]))
+    #print((i,nb,nbpaths[i]))
     setattr(TestNotebooks, 'test_'+nb, get(nb, nbpaths[i]))
 
 
