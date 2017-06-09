@@ -73,7 +73,7 @@ class MinCostFlow:
 
     def solve(self):
         """Solve the model."""
-        solver = pyomo.opt.SolverFactory('cplex')
+        solver = pyomo.opt.SolverFactory('gurobi')
         results = solver.solve(self.m, tee=True, keepfiles=False, options_string="mip_tolerances_integrality=1e-9 mip_tolerances_mipgap=0")
 
         if (results.solver.status != pyomo.opt.SolverStatus.ok):

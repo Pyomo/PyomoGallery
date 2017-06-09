@@ -40,10 +40,16 @@ try:
     pandas_available = True
 except:
     pandas_available = False
+try:
+    import networkx
+    networkx_available = True
+except:
+    networkx_available = False
 
 timeout=120
 
 requires_pandas = set(['max_flow_interdict', 'min_cost_flow_interdict', 'multi_commodity_flow_interdict', 'sp_interdict', 'min_cost_flow', 'mst'])
+requires_networkx = set(['mst'])
 
 
 # Testing for the notebooks - use nbconvert to execute all cells of the
@@ -81,6 +87,8 @@ def get(nbname, nbpath):
             self.skipTest("Jupyter unavailable")
         if nbname in requires_pandas and not pandas_available:
             self.skipTest("Pandas unavailable")
+        if nbname in requires_networkx and not networkx_available:
+            self.skipTest("Networkx unavailable")
 
         # execute the notebook using nbconvert to generate html 
         dir_=os.path.dirname(nbpath)

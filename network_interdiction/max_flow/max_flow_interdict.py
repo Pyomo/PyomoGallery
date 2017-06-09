@@ -136,7 +136,7 @@ class MaxFlowInterdiction:
         self.Idual = model
 
     def solve(self, tee=False):
-        solver = pyomo.opt.SolverFactory('cplex')
+        solver = pyomo.opt.SolverFactory('gurobi')
 
         # Solve the dual first
         self.Idual.BlockLimit.construct()
