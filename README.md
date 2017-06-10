@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Pyomo/PyomoGallery.svg?branch=master)](https://travis-ci.org/Pyomo/PyomoGallery)
+
 # PyomoGallery
 A collection of Pyomo examples
 
