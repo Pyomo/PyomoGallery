@@ -109,7 +109,7 @@ def get(nbname, nbpath):
             print('\n <<<<< {0} FAILED >>>>> \n'.format(nbname))
             print('Captured Output: \n {0}'.format(err))
 
-        self.assertTrue(check == 0)
+        self.assertEqual(check, 0)
 
     return test_func
 
