@@ -1,8 +1,13 @@
 language: python
 matrix:
   include:
+  - python: '2.7'
+    env:    CATEGORY="parallel" EXTRAS="yes"
   - python: '3.5'
-    env:                             CATEGORY="parallel" EXTRAS="yes"
+    env:    CATEGORY="parallel" EXTRAS="yes"
+  - python: '3.6'
+    env:    CATEGORY="parallel" EXTRAS="yes"
+
   #
   #- python: '3.6'
   #  env:                             CATEGORY="nightly"
