@@ -93,12 +93,15 @@ def get(nbname, nbpath):
         # execute the notebook using nbconvert to generate html 
         dir_=os.path.dirname(nbpath)
         os.chdir(dir_)
-        nbexe = subprocess.Popen(['jupyter', 'nbconvert', '{0}'.format(nbpath),
-                                  '--execute',
-                                  '--inplace',
-                                  '--ExecutePreprocessor.timeout='+str(timeout)],
-                                 stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                 stderr=subprocess.PIPE)
+        nbexe = subprocess.Popen(
+            [ 'jupyter', 'nbconvert', '{0}'.format(nbpath),
+              '--execute',
+              '--inplace',
+              '--ExecutePreprocessor.kernel_name=python%s' % (
+                  {2:"",3:"3"}[sys.version_info[0]], )
+              '--ExecutePreprocessor.timeout='+str(timeout)],
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE)
         output, err = nbexe.communicate()
         check = nbexe.returncode
         if check == 0:
