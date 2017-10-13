@@ -98,7 +98,7 @@ def get(nbname, nbpath):
               '--execute',
               '--inplace',
               '--ExecutePreprocessor.kernel_name=python%s' % (
-                  {2:"",3:"3"}[sys.version_info[0]], )
+                  {2:"",3:"3"}[sys.version_info[0]], ),
               '--ExecutePreprocessor.timeout='+str(timeout)],
             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
             stderr=subprocess.PIPE)
