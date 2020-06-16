@@ -8,10 +8,6 @@ matrix:
   - python: '3.6'
     env:    CATEGORY="parallel" EXTRAS="yes"
 
-  #
-  #- python: '3.6'
-  #  env:                             CATEGORY="nightly"
-  # NOTE: EXTRAS is not yet supported on Python 3.6.
 install:
 - sudo apt-get update --quiet
 #
@@ -30,7 +26,6 @@ install:
 #
 # Install supporting packages
 #
-#- conda install -q -y --no-update-deps --channel conda-forge setuptools
 - if [ "${TRAVIS_PYTHON_VERSION}" == "2.6" ]; then
      pip install --quiet ordereddict;
   fi
@@ -44,7 +39,7 @@ install:
   fi
 - pip install --quiet xlrd
 - pip install --quiet openpyxl
-- conda install -q -y -c anaconda pandas networkx jupyter
+- conda install -q -y -c anaconda pandas networkx jupyter jupyter_client
 #
 - if [ -n "${EXTRAS}" ]; then conda install -q -y --channel conda-forge pyomo.extras; fi
 - if [ "$TRAVIS_PYTHON_VERSION" != "2.6" -a -n "${EXTRAS}" ]; then
