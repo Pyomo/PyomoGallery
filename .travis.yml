@@ -25,7 +25,7 @@ install:
 - bash miniconda.sh -b -p $HOME/miniconda
 - export PATH="$HOME/miniconda/bin:$PATH"
 - hash -r
-- conda update -q conda
+- conda update -q -y conda
 - conda create -f -q -y -n testenv python=${TRAVIS_PYTHON_VERSION}
 - source activate testenv
 #
