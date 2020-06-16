@@ -25,13 +25,12 @@ install:
 - bash miniconda.sh -b -p $HOME/miniconda
 - export PATH="$HOME/miniconda/bin:$PATH"
 - hash -r
-- conda update -q -y conda
 - conda create -f -q -y -n testenv python=${TRAVIS_PYTHON_VERSION}
 - source activate testenv
 #
 # Install supporting packages
 #
-- conda install -q -y --channel conda-forge setuptools
+- conda install -q -y --no-update-deps --channel conda-forge setuptools
 - if [ "${TRAVIS_PYTHON_VERSION}" == "2.6" ]; then
      pip install --quiet ordereddict;
   fi
