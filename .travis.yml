@@ -30,7 +30,7 @@ install:
 #
 # Install supporting packages
 #
-- conda install -q -y --no-update-deps --channel conda-forge setuptools
+#- conda install -q -y --no-update-deps --channel conda-forge setuptools
 - if [ "${TRAVIS_PYTHON_VERSION}" == "2.6" ]; then
      pip install --quiet ordereddict;
   fi
