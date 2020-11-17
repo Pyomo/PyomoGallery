@@ -11,7 +11,7 @@ model = ConcreteModel()
 #  Sets
 #       i   canning plants   / seattle, san-diego /
 #       j   markets          / new-york, chicago, topeka / ;
-model.i = Set(initialize=['seattle','san-diego'], doc='Canning plans')
+model.i = Set(initialize=['seattle','san-diego'], doc='Canning plants')
 model.j = Set(initialize=['new-york','chicago', 'topeka'], doc='Markets')
  
 ## Define parameters ##
@@ -53,7 +53,7 @@ model.c = Param(model.i, model.j, initialize=c_init, doc='Transport cost in thou
 #  Positive Variable x ;
 model.x = Var(model.i, model.j, bounds=(0.0,None), doc='Shipment quantities in case')
  
-## Define contrains ##
+## Define constraints ##
 # supply(i)   observe supply limit at plant i
 # supply(i) .. sum (j, x(i,j)) =l= a(i)
 def supply_rule(model, i):
