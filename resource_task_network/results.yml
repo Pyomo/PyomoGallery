@@ -1,0 +1,207 @@
+# ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: tmpkBLmWg
+  Lower bound: 54.0
+  Upper bound: 54.0
+  Number of objectives: 1
+  Number of constraints: 169
+  Number of variables: 344
+  Number of nonzeros: 1356
+  Sense: minimize
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Status: ok
+  User time: 0.26
+  Termination condition: optimal
+  Termination message: MIP - Integer optimal solution\x3a Objective = 5.4000000000e+01
+  Statistics: 
+    Branch and bound: 
+      Number of bounded subproblems: 0
+      Number of created subproblems: 0
+  Error rc: 0
+  Time: 0.268925189972
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 1
+  number of solutions displayed: 1
+- Gap: 0.0
+  Status: optimal
+  Message: None
+  Objective:
+    objective:
+      Value: 54
+  Variable:
+    Deci[ChemA-11]:
+      Value: 1
+    Deci[ChemA-15]:
+      Value: 1
+    Deci[ChemA-18]:
+      Value: 1
+    Deci[ChemA-19]:
+      Value: 1
+    Deci[ChemA-1]:
+      Value: 1
+    Deci[ChemA-2]:
+      Value: 1
+    Deci[ChemB-1]:
+      Value: 1
+    Deci[Dark_Matter-10]:
+      Value: 1
+    Deci[Dark_Matter-11]:
+      Value: 1
+    Deci[Dark_Matter-12]:
+      Value: 1
+    Deci[Dark_Matter-13]:
+      Value: 1
+    Deci[Dark_Matter-14]:
+      Value: 1
+    Deci[Dark_Matter-15]:
+      Value: 1
+    Deci[Dark_Matter-16]:
+      Value: 1
+    Deci[Dark_Matter-17]:
+      Value: 1
+    Deci[Dark_Matter-18]:
+      Value: 1
+    Deci[Dark_Matter-19]:
+      Value: 1
+    Deci[Dark_Matter-4]:
+      Value: 1
+    Deci[Dark_Matter-5]:
+      Value: 1
+    Deci[Dark_Matter-6]:
+      Value: 1
+    Deci[Dark_Matter-7]:
+      Value: 1
+    Deci[Dark_Matter-8]:
+      Value: 1
+    Deci[Dark_Matter-9]:
+      Value: 1
+    Deci[Heat_Cool-3]:
+      Value: 1
+    Deci[Putty-22]:
+      Value: 1
+    Deci[Putty-2]:
+      Value: 1
+    Deci[Putty-4]:
+      Value: 1
+    Deci[Yogurt_Cups-10]:
+      Value: 1
+    Deci[Yogurt_Cups-14]:
+      Value: 1
+    Deci[Yogurt_Cups-4]:
+      Value: 1
+    Deci[Yogurt_Cups-6]:
+      Value: 1
+    Resources[collide]:
+      Value: 2
+    Resources[cool]:
+      Value: 1
+    Resources[inject]:
+      Value: 1
+    Resources[melt]:
+      Value: 1
+    Resources[mix]:
+      Value: 1
+    Resources[package]:
+      Value: 3
+    Resources[reaction]:
+      Value: 1
+    Task_HRS[collide-1]:
+      Value: 2
+    Task_HRS[collide-20]:
+      Value: 1
+    Task_HRS[collide-21]:
+      Value: 2
+    Task_HRS[collide-22]:
+      Value: 2
+    Task_HRS[collide-23]:
+      Value: 2
+    Task_HRS[collide-24]:
+      Value: 2
+    Task_HRS[collide-2]:
+      Value: 2
+    Task_HRS[collide-3]:
+      Value: 2
+    Task_HRS[collide-4]:
+      Value: 1
+    Task_HRS[cool-1]:
+      Value: 1
+    Task_HRS[cool-24]:
+      Value: 1
+    Task_HRS[cool-2]:
+      Value: 1
+    Task_HRS[cool-3]:
+      Value: 1
+    Task_HRS[cool-5]:
+      Value: 1
+    Task_HRS[inject-1]:
+      Value: 1
+    Task_HRS[inject-2]:
+      Value: 1
+    Task_HRS[inject-3]:
+      Value: 1
+    Task_HRS[inject-4]:
+      Value: 1
+    Task_HRS[inject-5]:
+      Value: 1
+    Task_HRS[inject-6]:
+      Value: 1
+    Task_HRS[inject-7]:
+      Value: 1
+    Task_HRS[melt-12]:
+      Value: 1
+    Task_HRS[melt-13]:
+      Value: 1
+    Task_HRS[melt-16]:
+      Value: 1
+    Task_HRS[melt-17]:
+      Value: 1
+    Task_HRS[melt-20]:
+      Value: 1
+    Task_HRS[melt-21]:
+      Value: 1
+    Task_HRS[melt-22]:
+      Value: 1
+    Task_HRS[melt-23]:
+      Value: 1
+    Task_HRS[melt-24]:
+      Value: 1
+    Task_HRS[melt-7]:
+      Value: 1
+    Task_HRS[melt-8]:
+      Value: 1
+    Task_HRS[melt-9]:
+      Value: 1
+    Task_HRS[mix-24]:
+      Value: 1
+    Task_HRS[package-11]:
+      Value: 1
+    Task_HRS[package-1]:
+      Value: 3
+    Task_HRS[package-23]:
+      Value: 1
+    Task_HRS[package-24]:
+      Value: 1
+    Task_HRS[package-2]:
+      Value: 2
+    Task_HRS[package-3]:
+      Value: 1
+    Task_HRS[package-7]:
+      Value: 1
+    Task_HRS[reaction-1]:
+      Value: 1
+    Task_HRS[reaction-23]:
+      Value: 1
+    Task_HRS[reaction-24]:
+      Value: 1
+  Constraint: No values
