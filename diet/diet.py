@@ -31,7 +31,7 @@ model.cost = Objective(rule=cost_rule)
 # Limit nutrient consumption for each nutrient
 def nutrient_rule(model, j):
     value = sum(model.a[i,j]*model.x[i] for i in model.F)
-    return model.Nmin[j] <= value <= model.Nmax[j]
+    return inequality(model.Nmin[j], value, model.Nmax[j])
 model.nutrient_limit = Constraint(model.N, rule=nutrient_rule)
 
 # Limit the volume of food consumed
