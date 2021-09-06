@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+adaptive_model_mixer/model1/*
+adaptive_model_mixer/model2/*
+adaptive_model_mixer/model3/*
+adaptive_model_mixer/gurobi.log
+beta_adaptive_model_mixer/model1/*
+beta_adaptive_model_mixer/model2/*
+beta_adaptive_model_mixer/model3/*
+beta_adaptive_model_mixer/gurobi.log
+**/__pycache__/*
