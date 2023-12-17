@@ -47,7 +47,7 @@ class MinCostFlow:
             return sum(m.Y[e] * self.arc_data.ix[e,'Cost'] for e in self.arc_set)
         self.m.OBJ = pe.Objective(rule=obj_rule, sense=pe.minimize)
         
-        # Flow Ballance rule
+        # Flow Balance rule
         def flow_bal_rule(m, n):
             arcs = self.arc_data.reset_index()
             preds = arcs[ arcs.End == n ]['Start']
