@@ -1,0 +1,33 @@
+# Authors: Miten Mistry and Ruth Misener
+#         Department of Computing, Imperial College London
+
+# parameters for model: http://www.gamsworld.org/minlp/minlplib2/html/heatexch_gen1.html
+
+param Alpha       := 150;
+param Beta		    := 1;
+param Cost_hx     := 5500;
+param Cost_cu     := 15;
+param Cost_hu     := 80;
+param Delta_t_min := 10;
+
+param Number_stages      := 2;
+param Number_hot_stream  := 2;
+param Number_cold_stream := 2;
+
+param : Th_in Th_out Fh Hh :=
+1 650 370 10 1
+2 590 370 20 1
+;
+
+param : Tc_in Tc_out Fc Hc :=
+1 410 650 15 1
+2 350 500 13 1
+;
+
+param T_cu_in  := 300;
+param T_cu_out := 320;
+param H_cu := 1;
+
+param T_hu_in  := 680;
+param T_hu_out := 680;
+param H_hu := 5;
