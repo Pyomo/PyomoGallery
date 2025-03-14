@@ -56,7 +56,7 @@ class MinCostFlow:
 
         # Create objective
         def obj_rule(m):
-            return sum(m.Y[e] * self.arc_data.ix[e,'Cost'] for e in self.arc_set)
+            return sum(m.Y[e] * self.arc_data.loc[e,'Cost'] for e in self.arc_set)
         self.m.OBJ = pe.Objective(rule=obj_rule, sense=pe.minimize)
         
         # Flow Balance rule
@@ -64,23 +64,23 @@ class MinCostFlow:
             arcs = self.arc_data.reset_index()
             preds = arcs[ arcs.End == n ]['Start']
             succs = arcs[ arcs.Start == n ]['End']
-            return sum(m.Y[(p,n)] for p in preds) - sum(m.Y[(n,s)] for s in succs) == self.node_data.ix[n,'Imbalance']
+            return sum(m.Y[(p,n)] for p in preds) - sum(m.Y[(n,s)] for s in succs) == self.node_data.loc[n,'Imbalance']
         self.m.FlowBal = pe.Constraint(self.m.node_set, rule=flow_bal_rule)
 
         # Upper bounds rule
         def upper_bounds_rule(m, n1, n2):
             e = (n1,n2)
-            if self.arc_data.ix[e, 'UpperBound'] < 0:
+            if self.arc_data.loc[e, 'UpperBound'] < 0:
                 return pe.Constraint.Skip
-            return m.Y[e] <= self.arc_data.ix[e, 'UpperBound']
+            return m.Y[e] <= self.arc_data.loc[e, 'UpperBound']
         self.m.UpperBound = pe.Constraint(self.m.arc_set, rule=upper_bounds_rule)
         
         # Lower bounds rule
         def lower_bounds_rule(m, n1, n2):
             e = (n1,n2)
-            if self.arc_data.ix[e, 'LowerBound'] < 0:
+            if self.arc_data.loc[e, 'LowerBound'] < 0:
                 return pe.Constraint.Skip
-            return m.Y[e] >= self.arc_data.ix[e, 'LowerBound']
+            return m.Y[e] >= self.arc_data.loc[e, 'LowerBound']
         self.m.LowerBound = pe.Constraint(self.m.arc_set, rule=lower_bounds_rule)
 
     def solve(self):
